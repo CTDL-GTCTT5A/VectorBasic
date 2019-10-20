@@ -18,15 +18,18 @@ public:
 
 	// Constructor:
 	Vector();
-	Vector(const double* _arr, int _n_dim);
-	Vector(const Vector &);
+
+	// Overloading
 	Vector& operator = (const Vector &);
+	friend istream& operator >> (istream& in, Vector&);
+	friend ostream& operator << (ostream& out, const Vector&);
+	Vector& operator + (Vector &);
+	//Vector& operator * (Vector &);
+
+	// Method
+	void main_menu();
 
 	// Destructor
 	~Vector();
-
-	// Method:
-	Vector* add(const Vector* _v2);
-	void show();
 };
 
